@@ -11,6 +11,7 @@
 
     <modules>
         <module>recipe-storage</module>
+        <module>recipe-web</module>
     </modules>
 
     <repositories>
@@ -64,7 +65,11 @@
 
     </dependencies>
 
+    <properties>
+    </properties>
+
     <build>
+        <finalName>recipe-web</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -73,6 +78,22 @@
                     <source>7</source>
                     <target>7</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.10</version>
             </plugin>
         </plugins>
     </build>
