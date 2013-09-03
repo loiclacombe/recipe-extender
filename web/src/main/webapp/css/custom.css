@@ -1,0 +1,21 @@
+/* Customize container */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+   .navbar {
+     max-width: 1024px;
+     margin-right: auto;
+     margin-left: auto;
+   }
+ }
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.span9 {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    border-radius: 10px;
+}
