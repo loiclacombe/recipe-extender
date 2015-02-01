@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="large-9 columns" role="content">
+        <article ng-controller="NewRecipeCtrl">
+            <h3><a href="#">Type your new recipe</a></h3>
+            <form method="post">
+                <div class="row">
+                    <div class="large-8 medium-8 columns">
+                        <label>Nom de votre recette</label>
+                        <input type="text" placeholder="Entrez le nom de la recette" name="name"/>
+                    </div>
+                </div>
+                <div class="row" ng-repeat="ingredient in ingredients">
+                    <div class="large-8 medium-8 columns">
+                        <label>Nom et quantité de l'ingrédient n°{{$index + 1}}</label>
+                        <input type="text" ng-model="ingredient.value"/>
+                    </div>
+                </div>
+                <div id="more_ingredients_before"/>
+                <div class="row">
+                    <button class="small round button" ng-click="ingredients.add()">Ajouter un nouvel ingrédient</button>
+                    <button class="small round button" ng-click="ingredients.removeLast()">Retirer une ingrédient</button>
+                </div>
+                <div class="row" ng-repeat="step in steps">
+                    <div class="large-12 columns">
+                        <label>Etape n°{{$index + 1}}</label>
+                        <textarea placeholder="Etape" ng-model="step.value"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="small round button" ng-click="steps.add()">Ajouter une nouvelle étape</button>
+                    <button class="small round button" ng-click="steps.removeLast()">Retirer une étape</button>
+                </div>
+                <div class="row">
+                    <button class="medium round button ">Valider la nouvelle recette</button>
+                </div>
+
+                <pre>{{ ingredients | json }}</pre>
+                <pre>{{ steps | json }}</pre>
+            </form>
+        </article>
+    </div>
+</div>
